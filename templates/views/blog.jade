@@ -1,0 +1,68 @@
+extends ../layouts/base
+
+include ../mixins/blog-post
+
+block css
+    link(rel='stylesheet', href='/styles/lib/iconic_fill/iconic_fill.css', type='text/css' media='screen')
+
+block content    
+    .pure-u-16-24
+        .blog-posts
+            - for (var i=0; i<posts.length; i++) {
+                +blog-post(posts[i])
+            - }
+    .pure-u-8-24
+        .hot-posts
+            .hot-posts-header
+                |!! WHAT'S HOT RIGHT NOW ??
+            .hot-icon-zone
+                span(class="iconic bolt hot-icon", id="hot-icon-bolt")
+                span(class="iconic sun_fill hot-icon", id="hot-icon-sun")
+                span(class="iconic heart_fill hot-icon", id="hot-icon-heart")
+            - for (var i=0; i<hot_posts.length; i++) {
+                .hot-post
+                    a(href="/blog/" + hot_posts[i].slug)
+                        =hot_posts[i].title
+            - }
+            .hot-icon-zone
+                span(class="iconic heart_fill hot-icon", id="hot-icon-heart")
+                span(class="iconic sun_fill hot-icon", id="hot-icon-sun")
+                span(class="iconic bolt hot-icon", id="hot-icon-bolt")
+        .cool-icon-closer
+            .cool-icon-closer-text COOL !!!
+            span(class="iconic moon_fill cool-icon", id="cool-icon-moon") 
+            span(class="iconic rain cool-icon", id="cool-icon-rain")
+            
+block js
+    script(src="/js/lib/rainbow.js")
+    script(src="/js/hot.js")
+    script.
+        $('#menu-list').children().removeClass('pure-menu-selected');
+        $('#blog-nav').addClass('pure-menu-selected');
+
+        function moveRainRight() {
+            $('#cool-icon-rain').animate({
+                'right': '10px'
+            }, 800, moveRainLeft);
+        }
+
+        function moveRainLeft() {
+            $('#cool-icon-rain').animate({
+                'right': '20px'
+            }, 800, moveRainRight);
+        }
+
+        function moveMoonRight() {
+            $('#cool-icon-moon').animate({
+                'left': '30px'
+            }, 800, moveMoonLeft);
+        }
+
+        function moveMoonLeft() {
+            $('#cool-icon-moon').animate({
+                'left': '20px'
+            }, 800, moveMoonRight);
+        }
+
+        moveRainLeft();
+        moveMoonRight();

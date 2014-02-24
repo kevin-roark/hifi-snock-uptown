@@ -1,0 +1,24 @@
+extends ../layouts/base
+
+block content
+    .pure-u-1-4
+
+    .pure-u-1-2
+        #archive-list-header HIFI SNOCK Performance and Happenings Archives
+        #archive-list-container
+            ul(id="archive-list")
+                - for (var i=0; i<archives.length; i++) {
+                    li(class="archive-list-item")
+                        a(href="/archives/" + archives[i].slug)
+                            = archives[i].title + archives[i]._.createdAt.format(' - MMMM Do YYYY')
+                - }
+                if (archives.length < 1)
+                    li(class="archive-list-item")
+                        a(href="/")
+                            | Still waiting on some hot archives. Check out our front page!!
+                
+
+block js
+    script.
+        $('#menu-list').children().removeClass('pure-menu-selected');
+        $('#archive-nav').addClass('pure-menu-selected');

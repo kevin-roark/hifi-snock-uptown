@@ -1,0 +1,1266 @@
+@homeColor: black;
+@eventColor: #a8a000;
+@blogColor: #2800ad;
+@archiveColor: #009e3f;
+@recipeColor: #6200b3;
+@aboutColor: #9e005a;
+
+@snockBarSectionBgColor: rgba(250, 250, 250, 1.0);
+@snockFriendsHeaderColor: #2e9900;
+@snockEnemiesHeaderColor: #a30013;
+@snockHotPostHeaderColor: #ff5405;
+@snockHotPostTitleColor: #ff00ae;
+@snockArchivesHeaderColor: #009;
+@snockRecipesHeaderColor: #7100bd;
+
+@frontPageEventBgColor: rgba(41, 148, 255, 1.0);
+@frontPageEventTitleColor: rgba(240, 240, 240, 1);
+
+@defaultChatBgColor: #eee;
+@highlightChatBgColor: #fff780;
+@defaultChatSectionBgColor: #00CC99;
+@chatHeaderColor: #FF0066;
+@chatSettingsColor: yellow;
+
+@hotPostColor: #ff2b00;
+@hotPostHighlightColor: #ffe942;
+@hotPostBorderColor: #ffee6b;
+@hotPostSectionBorderColor: #f30;
+@hotPostSectionBgColor: rgba(255, 77, 0, 0.45);
+
+@coolIconBorderColor: #0ad2ff;
+@coolIconCloserBgColor: rgba(167, 240, 251, 0.45);
+
+@postBgColor: #fafafa;
+@postHeaderBorderColor: #CC00FF;
+@postImageBorderColor: green;
+@postAuthorColor: #005C1F;
+@postTimeColor: #B84A00;
+@postBriefBgColor: #95a2f9;
+@postBriefColor: #222;
+@postExtendedBgColor: rgba(255, 163, 174, 0.3);
+@postExtendedColor: #222;
+
+@eventBgColor: #FFFF66;
+@eventStartColor: #0099FF;
+@eventEndColor: #B80000;
+@eventHrColor: green;
+@eventImgBorderColor: #3366CC;
+@otherEventsBgColor: #eee;
+@otherEventsColor: #FF6666;
+@eventLeftBarBgColor: #222;
+@eventLeftBarTextColor: #dedede;
+
+@archiveListHeaderBgColor: #2f77d0;
+@archiveListHeaderColor: #111;
+@archiveListItemColor: #CC9900;
+@archiveListItemBgColor: #E0E0EB;
+
+@archiveImageBorderColor: #ed1266;
+@archiveAudioBorderColor: #17e8bb;
+@archiveHeaderBorderColor: #AC87D1;
+@archiveHeaderBgColor: #20eeb4;
+@archiveImagesBgColor: #F9D423;
+@archiveAudioBgColor: #FF4E50;
+@archiveVideoBgColor: #2276dd;
+@archiveVideoBorderColor: #FC913A;
+
+@archiveSectionMargin: 2px;
+@archiveSectionBorderWidth: 4px;
+@archiveContentOffset: 160px;
+@archiveContentFromRight: 30px;
+@archiveEmbedBorderWidth: 3px;
+
+@aboutEmailSectionBgColor: #eee;
+@aboutPhoneSectionBgColor: #ddd;
+@aboutChatSectionBgColor: #ccc;
+@aboutParagraphSectionBgColor: #bbb;
+
+@recipesHeaderColor: #6200b3;
+@recipeBoxTextColor: #7600d6;
+
+@recipePostTextColor: #8400d6;
+@recipeSidebarTextColor: #d6002b;
+
+@logoHeight: 300px;
+@logoWidth: 450px;
+@songPlayerWidth: 460px;
+@bodyWidth: 1024px;
+
+body {
+    min-width: @bodyWidth;
+    padding: 0;
+    margin-top: @logoHeight - 40px;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo-zone {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+    .logo {
+        height: @logoHeight;
+        width: @logoWidth;
+    }
+
+.extra-logo-stuff {
+    position: absolute;
+    top: @logoHeight - 140px;
+    left: @logoWidth - 5px;
+}
+
+#menu-bar {
+    padding-left: @logoWidth;
+    width: @bodyWidth - @logoWidth;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: transparent;
+
+    & ul .pure-menu-selected {
+        border-bottom: 2px solid #666;
+    }
+}
+
+    #home-nav {
+
+        & a {
+            color: @homeColor;
+            background-color: lighten(@homeColor, 92%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@homeColor, 82%);
+            }
+    }
+
+    #event-nav {
+
+        & a {
+            color: @eventColor;
+            background-color: lighten(@eventColor, 60%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@eventColor, 25%);
+            }
+    }
+
+    #blog-nav {
+
+        & a {
+            color: @blogColor;
+            background-color: lighten(@blogColor, 60%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@blogColor, 25%);
+            }
+    }
+
+    #archive-nav {
+
+        & a {
+            color: @archiveColor;
+            background-color: lighten(@archiveColor, 60%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@archiveColor, 25%);
+            }
+    }
+
+    #recipe-nav {
+
+        & a {
+            color: @recipeColor;
+            background-color: lighten(@recipeColor, 50%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@recipeColor, 35%);
+            }
+    }
+
+    #about-nav {
+
+        & a {
+            color: @aboutColor;
+            background-color: lighten(@aboutColor, 60%);
+        }
+
+            & a:hover, & a:focus {
+                background-color: lighten(@aboutColor, 35%);
+            }
+    }
+
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+
+/** 
+ * BLOG STYLES
+ */
+
+.blog-posts {
+    margin-left: 40px;
+}
+
+.hot-posts {
+    text-align: center;
+    margin: 0px 10px;
+    border-top: 3px solid @hotPostSectionBorderColor;
+    border-bottom: 3px solid @hotPostSectionBorderColor;
+    background-color: @hotPostSectionBgColor;
+}
+
+    .hot-posts-header {
+        font-size: 3.5em;
+    }
+
+    .hot-icon-zone {
+        text-align: center;
+    }
+
+        .hot-icon {
+            font-size: 120px;
+            margin: 0px 6px;
+        }
+
+            #hot-icon-bolt {
+                color: yellow;
+            }
+
+            #hot-icon-sun {
+                color: orange;
+            }
+
+            #hot-icon-heart {
+                color: red;
+            }
+
+    .hot-post {
+        margin: 10px 20px;
+        font-size: 2em;
+        padding-bottom: 10px;
+        border-bottom: 1px solid @hotPostBorderColor;
+
+        & a {
+            text-decoration: none;
+            color: @hotPostColor;
+        }
+
+            & a:hover, & a:focus {
+                color: @hotPostHighlightColor;
+                font-size: 1.2em;
+            }
+    }
+
+.cool-icon-closer {
+    text-align: center;
+    margin: 10px 10px 5px 10px;
+    border-top: 3px solid @coolIconBorderColor;
+    border-bottom: 3px solid @coolIconBorderColor;
+    background-color: @coolIconCloserBgColor;
+    position: relative;
+    height: 215px;
+}
+
+    .cool-icon-closer-text {
+        font-size: 72px;
+        color: #6c52ff;
+    }
+
+    .cool-icon {
+        font-size: 150px;
+        margin: 0px 12px;
+        position: absolute;
+        bottom: 5px;
+    }
+
+        #cool-icon-rain {
+            color: #048ce7;
+            right: 10px;
+
+            &:hover, &:focus {
+                color: black;
+            }
+        }
+
+        #cool-icon-moon {
+            color: #04e79b;
+            left: 20px;
+
+            &:hover, &:focus {
+                color: black;
+            }
+        }
+
+.blog-post {
+    border: 1px solid #666;
+    background-color: @postBgColor;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+    .post-header {
+        margin-bottom: 10px;
+        margin-left: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid @postHeaderBorderColor;
+    }
+
+        .post-title {
+            font-size: 2.5em;
+        }
+
+        .post-details {
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+
+            .post-author {
+                color: @postAuthorColor;
+            }
+
+            .post-time {
+                color: @postTimeColor;
+            }
+
+    .post-image-container {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid @postImageBorderColor;
+            padding-bottom: 5px;
+    }
+
+        .post-image {
+            border: 1px solid #ccc;
+            max-height: 320px;
+            max-width: 90%;
+            padding: 5px;
+            background: #fff;
+        }
+
+    .post-body {
+        font-size: 1em;
+        margin-right: 30px;
+        margin-left: 7px;
+
+        & hr {
+            width: 95%;
+        }
+    }
+
+        .post-body-holder {
+            position: relative;
+        }
+
+            .post-body-icon-holder {
+                position: absolute;
+                left: 5px;
+                top: 6px;
+            }
+
+                .post-body-icon {
+                    font-size: 30px;
+                }
+
+                    #post-body-icon-pen {
+
+                    }
+
+                    #post-body-icon-book {
+                        font-size: 35px;
+                    }
+
+            .post-brief {
+                background-color: @postBriefBgColor;
+                color: @postBriefColor;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-right: 10px;
+                padding-left: 40px;
+                font-size: 1.3em;
+
+                & p {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+        .post-extended {
+            background-color: @postExtendedBgColor;
+            color: @postExtendedColor;
+            padding: 7px 7px 7px 40px;
+            border: 1px solid #eee;
+            font-size: 1.2em;
+
+            & p {
+                padding: 0;
+                margin: 0;
+            }
+
+            & a {
+              text-decoration: none;
+              color: rgba(40, 220, 80, 1);
+
+              &:hover, &:focus {
+                color: rgba(60, 250, 120, 1);
+              }
+            }
+        }
+
+/**
+ * EVENT STYLES
+ */
+
+.event-post {
+    background-color: @eventBgColor;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+
+    color: #222;
+}
+
+    .event-header {
+
+    }
+
+        .event-name {
+            font-size: 2.4em;
+            text-align: center;
+        }
+
+        .event-date {
+            color: #444;
+            text-align: center;
+            font-size: 1.9em;
+        }
+
+        .event-time {
+            text-align: center;
+            font-size: 1.7em;
+            letter-spacing: 0.1em;
+        }
+
+            .event-start {
+                color: @eventStartColor;
+            }
+
+            .event-end {
+                color: @eventEndColor;
+            }
+
+    .event-image-container {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+        .event-image {
+            max-height: 400px;
+            max-width: 90%;
+        }
+
+    .event-content {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 5px;
+        border-top: 1px solid @eventHrColor;
+        font-size: 1.15em;
+    }
+
+        .event-description {
+
+        }
+
+            .event-description p {
+                margin: 5px;
+                padding: 0;
+            }
+
+#event-left-bar {
+    margin: 0px 10px 0px 10px;
+    background-color: @eventLeftBarBgColor;
+    color: @eventLeftBarTextColor;
+    padding: 5px;
+}
+
+    #events-writeup {
+        font-size: 2em;
+    }
+
+#other-events {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-color: @otherEventsBgColor;
+}
+
+    #other-events-header {
+        font-size: 3em;
+    }
+
+    #other-events-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+        #other-events-list li {
+            margin-top: 5px;
+            border-top: 1px solid #aaa;
+        }
+
+            #other-events-list li a {
+                color: @otherEventsColor;
+                text-decoration: none;
+
+                &:hover, &:focus {
+                    color: darken(@otherEventsColor, 20%);
+                };
+            }
+
+/**
+ * MUSIC STYLES
+ */
+
+.song-player {
+    background-color: rgba(245, 245, 245, 1);
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    width: @songPlayerWidth + 48px;
+    text-align: center;
+}
+    .audiojs {
+        margin-left: 24px;
+    }
+
+    .song-details {
+        font-size: 0.8em;
+        padding: 0px 5px;
+        text-align: left;
+    }
+
+        .song-title {
+            text-align: center;
+            font-size: 1.25em;
+            font-weight: 100;
+            letter-spacing: 0.05em;
+        }
+
+        .song-artist {
+            color: blue;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+            .song-album {
+                color: red;
+            }
+
+    .song-player-play-button {
+        background-color: rgba(225, 50, 50, 1);
+        color: rgba(40, 40, 60, 1);
+
+        &:hover {
+            color: rgba(230, 230, 230, 1);
+            background-color: rgba(50, 50, 225, 1);
+        }
+    }
+
+/**
+ * CHAT AND INDEX STYLES
+ */
+
+ #front-page-event {
+    background-color: @frontPageEventBgColor;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    color: @frontPageEventTitleColor;
+ }
+
+    #front-page-event-title {
+        font-size: 1.5em;
+        width: 65%;
+        padding-left: 10px;
+    }
+
+        #front-page-event-title-name {
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: @frontPageEventTitleColor;
+
+                &:hover, &:focus {
+                    color: darken(@frontPageEventTitleColor, 20%);
+                };
+        }
+
+    #front-page-event-date {
+        font-size: 1.8em;
+        color: @frontPageEventTitleColor;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: darken(@frontPageEventTitleColor, 20%);
+        }
+    }
+
+    #front-page-event-flyer-container {
+        text-align: center;
+    }
+
+        #front-page-event-flyer {
+            max-width: 95%;
+            max-height: 720px;
+            border: 3px solid transparent;
+
+            &:hover, &:focus {
+                border: 3px solid darken(@frontPageEventTitleColor, 40%);
+            }
+        }
+
+.snock-sidebar-section {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: @snockBarSectionBgColor;
+}
+
+    .snock-sidebar-header {
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .snock-sidebar-list {
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        margin-top: 8px;
+        margin-bottom: 0px;
+
+        & li {
+            font-size: 1.2em;
+            line-height: 1.4em;
+            padding-bottom: 5px;
+
+            & a {
+                text-decoration: none;
+            }
+        }
+    }
+
+#snock-friends {
+    
+}
+
+    #snock-friends-header {
+        color: @snockFriendsHeaderColor;
+    }
+
+    #snock-friends-list {
+        
+    }
+
+        .snock-friend {
+            & a {
+                color: lighten(@snockFriendsHeaderColor, 10%);
+
+                &:hover, &:focus {
+                    color: saturate(lighten(@snockFriendsHeaderColor, 20%), 20%);
+                }
+            }
+        }
+
+#snock-enemies {
+    
+}
+
+    #snock-enemies-header {
+        color: @snockEnemiesHeaderColor;
+    }
+
+    #snock-enemies-list {
+        
+    }
+
+        .snock-enemy {
+            & a {
+                color: lighten(@snockEnemiesHeaderColor, 15%);
+
+                &:hover, &:focus {
+                    color: saturate(lighten(@snockEnemiesHeaderColor, 30%), 20%);
+                }
+            }
+        }
+
+#snock-chives {
+    
+}
+
+    #snock-chives-header {
+        color: @snockArchivesHeaderColor;
+    }
+
+    #snock-chives-list {
+
+    }
+
+        .snock-chive {
+            & a {
+                color: lighten(@snockArchivesHeaderColor, 15%);
+
+                &:hover, &:focus {
+                    color: saturate(lighten(@snockArchivesHeaderColor, 30%), 20%);
+                }
+            }
+        }
+
+#snock-recipes {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+    #snock-recipes-header {
+        color: @snockRecipesHeaderColor;
+
+        & div a {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: lighten(@snockRecipesHeaderColor, 15%);
+
+            &:hover, &:focus {
+                color: saturate(lighten(@snockRecipesHeaderColor, 25%), 20%);
+            }
+        }
+    }
+
+#snock-one-hot-post {
+    background-color: @snockBarSectionBgColor;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px dashed red;
+}
+
+    #snock-one-hot-post-header {
+        color: @snockHotPostHeaderColor;
+        font-size: 2.2em;
+    }
+
+    #hot-post-link {
+        text-decoration: none;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        color: @snockHotPostTitleColor;
+
+        &:hover, &:focus {
+            color: saturate(lighten(@snockHotPostTitleColor, 20%), 20%);
+        }
+    }
+
+    .snock-hot-post-icon {
+        font-size: 90px;
+    }
+
+        #snock-hot-post-bolt {
+            color: darken(yellow, 1%);
+
+            &:hover, &:focus {
+                color: red;
+            }
+        }
+
+#chatting {
+    background-color: @defaultChatSectionBgColor;
+    padding: 0.25em;
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #eee;
+}
+
+    #chat-header {
+        font-size: 2em;
+        text-align: center;
+        color: @chatHeaderColor;
+    }
+
+        #chat-settings {
+            font-size: 0.5em;
+            text-align: center;
+            margin-bottom: 4px;
+            color: @chatSettingsColor;
+        }
+
+            #ppl-chattin {
+                margin-top: -5px;
+                margin-bottom: 5px;
+                font-size: 1.2em;
+            }
+
+                #chatter-count {
+
+                }
+
+            #name-input {
+                height: 30px;
+                width: 200px;
+            }
+
+            .color-input {
+               border-radius: 8px;
+            }
+
+    #chat-box {
+        background-color: @defaultChatBgColor;
+        padding: 0.25em;
+        height: 400px;
+        margin-bottom: 5px;
+        overflow-y: scroll;
+
+        &:hover, &:focus {
+            background-color: @highlightChatBgColor;
+        }
+    }
+        #chat-controls {
+            text-align: right;
+        }
+
+            #chat-input {
+                width: 84%;
+            }
+
+            #chat-send {
+                width: 15%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+        .chat-msg {
+            background-color: #fff;
+            border: 1px solid #888;
+            padding: 1px;
+            margin: 2px;
+            font-size: 0.9em;
+            color: #000;
+        }
+
+            .chat-nickname {
+
+                &:after {
+                    content: ": ";
+                }
+            }
+
+            .chat-msg-time {
+                font-size: 0.9em;
+
+                &:after {
+                    content: ", ";
+                }
+            }
+
+/**
+ * Recipe styles
+ */
+
+#recipes-header {
+    text-align: center;
+    font-size: 3.5em;
+    letter-spacing: 0.01em;
+    color: @recipesHeaderColor;
+}
+
+#recipe-grid {
+    margin: 15px 50px 10px 50px;
+}
+
+    .recipe-box {
+        text-align: center;
+    }
+
+        .recipe-box-link {
+            text-decoration: none;
+            color: @recipeBoxTextColor;
+
+            &:hover, &:focus {
+                color: lighten(@recipeBoxTextColor, 20%);
+            }
+        }
+
+            .recipe-box-name {
+
+            }
+
+            .recipe-box-image-holder {
+
+            }
+
+                .recipe-box-image {
+                    max-width: 98%;
+                    height: auto;
+                }
+
+.recipe-post {
+    color: @recipePostTextColor;
+}
+
+    .recipe-name {
+        font-size: 2.5em;
+    }
+
+    .recipe-details {
+        padding-left: 5px;
+        font-size: 1.15em;
+    }
+
+        .recipe-author {
+
+
+            &:before {
+                content: "By: ";
+            }
+        }
+
+        .recipe-date {
+
+
+            &:before {
+                content: "Posted at ";
+            }
+        }
+
+    .recipe-header-image-holder {
+    }
+
+        .recipe-header-image {
+            margin: 15px 0px 10px 0px;
+            max-width: 98%;
+            max-height: 420px;
+
+            -moz-box-shadow:    1px 1px 5px 6px @recipePostTextColor;
+            -webkit-box-shadow: 1px 1px 5px 6px @recipePostTextColor;
+            box-shadow:         1px 1px 5px 6px @recipePostTextColor;
+        }
+
+    .recipe-ingredients-header {
+        font-size: 1.5em;
+    }
+
+    .recipe-ingredients {
+        color: darken(@recipePostTextColor, 8%);
+
+        & ul {
+            margin-top: 10px;
+        }
+    }
+
+    .recipe-instructions-header {
+        font-size: 1.5em;
+    }
+
+    .recipe-instructions {
+        color: darken(@recipePostTextColor, 8%);
+        padding-left: 25px;
+    }
+
+    .recipe-other-images {
+        padding-left: 10px;
+        color: @recipeSidebarTextColor;
+    }
+
+        .recipe-other-images-header {
+            font-size: 2.25em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .recipe-other-image-holder {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+            .recipe-other-image {
+                max-width: 92%;
+                max-height: 300px;
+
+                -moz-box-shadow:    1px 1px 5px 6px @recipeSidebarTextColor;
+                -webkit-box-shadow: 1px 1px 5px 6px @recipeSidebarTextColor;
+                box-shadow:         1px 1px 5px 6px @recipeSidebarTextColor;
+            }
+
+/**
+ * Archive styles
+ */
+
+ #archive-list-header {
+    text-align: center;
+    font-size: 3em;
+    color: @archiveListHeaderColor;
+    background-color: @archiveListHeaderBgColor;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:hover, &:focus {
+        background-color: saturate(@archiveListHeaderBgColor, 20%);
+        color: darken(@archiveListHeaderColor, 20%);
+    };
+ }
+
+ #archive-list-container {
+    text-align: center;
+    margin-top: 10px;
+ }
+
+    #archive-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .archive-list-item {
+            margin-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+            background-color: @archiveListItemBgColor;
+            border-radius: 8px;
+
+            & a {
+                color: @archiveListItemColor;
+                text-decoration: none;
+            }
+
+                & a:hover, & a:focus {
+                    color: darken(@archiveListItemColor, 10%);
+                }
+        }
+
+.body-hider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(50, 50, 50, 0.9);
+    z-index: 1000;
+    display: none;
+}
+
+.archive-image-overlay-wrapper {
+    width: 1000px;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    z-index: 1001;
+
+    background-color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+
+    & img {
+        max-width: 980px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+    .archive-image-overlay {
+        
+    }
+
+.archive-post {
+    width: 100%;
+}
+    
+    .archive-section-icon {
+        font-size: 172px;
+        position: absolute;
+        left: 15px;
+        top: 20px;
+    }
+
+    .archive-section-padder {
+        margin-left: @archiveContentOffset;
+        margin-right: @archiveContentFromRight;
+    }
+    
+    .archive-header {
+        position: relative;
+        background-color: @archiveHeaderBgColor;
+        border-top: @archiveSectionBorderWidth solid @archiveHeaderBorderColor;
+        border-bottom: @archiveSectionBorderWidth solid @archiveHeaderBorderColor;
+    }
+
+        .archive-post-title {
+            font-size: 3em;
+            letter-spacing: 2px;
+        }
+
+        .archive-date {
+            font-size: 0.9em;
+            padding-bottom: 5px;
+            border-bottom: 1px solid black;
+        }
+
+        .archive-post-description {
+            margin-left: 5px;
+            font-size: 1.05em;
+        }
+
+    .archive-images {
+        border-top: @archiveSectionBorderWidth solid @archiveImageBorderColor;
+        border-bottom: @archiveSectionBorderWidth solid @archiveImageBorderColor;
+        padding-top: 10px;
+        margin-top: @archiveSectionMargin;
+        background-color: @archiveImagesBgColor;
+        position: relative;
+    }
+
+        .archive-image-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+            .archive-image {
+                max-width: 95%;
+                height: auto;
+                border: @archiveEmbedBorderWidth solid darken(@archiveImageBorderColor, 12%);
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    border: @archiveEmbedBorderWidth solid @archiveImageBorderColor;
+                }
+            }
+
+    .archive-audio {
+        border-top: @archiveSectionBorderWidth solid @archiveAudioBorderColor;
+        border-bottom: @archiveSectionBorderWidth solid @archiveAudioBorderColor;
+        padding-top: 10px;
+        margin-top: @archiveSectionMargin;
+        background-color: @archiveAudioBgColor;
+        position: relative;
+    }
+
+        .archive-audio-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+            .archive-audio-embed {
+                max-width: 95%;
+                height: 260px;
+                border: @archiveEmbedBorderWidth solid darken(@archiveAudioBorderColor, 20%);
+
+                &:hover, &:focus {
+                    border: @archiveEmbedBorderWidth solid @archiveAudioBorderColor;
+                }
+            }
+
+            .archive-audio-caption {
+
+            }
+
+    .archive-video {
+        border-top: @archiveSectionBorderWidth solid @archiveVideoBorderColor;
+        border-bottom: @archiveSectionBorderWidth solid @archiveVideoBorderColor;
+        padding-top: 10px;
+        margin-top: @archiveSectionMargin;
+        background-color: @archiveVideoBgColor;
+        position: relative;
+        text-align: center;
+    }
+
+        .archive-video-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+            .archive-video-embed {
+                max-width: 98%;
+                border: @archiveEmbedBorderWidth solid darken(@archiveVideoBorderColor, 10%);
+
+                &:hover, &:focus {
+                    border: @archiveEmbedBorderWidth solid @archiveVideoBorderColor;
+                }
+            }
+
+            .archive-video-caption {
+
+            }
+
+/**
+ * About Styles
+ */
+
+ .about-content-wrapper {
+    margin-left: 60px;
+ }
+
+    .about-section {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 3px;
+    }
+
+    .about-email {
+        text-align: center;
+        font-size: 2.5em;
+        background-color: @aboutEmailSectionBgColor;
+    }
+
+    .about-phone {
+        text-align: center;
+        font-size: 2.5em;
+        background-color: @aboutPhoneSectionBgColor;
+    }
+
+    .about-chat {
+        text-align: center;
+        font-size: 3em;
+        background-color: @aboutChatSectionBgColor;
+    }
+
+    .about-paragraph {
+        margin-top: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.25em;
+        background-color: @aboutParagraphSectionBgColor;
+        color: #222;
+    }

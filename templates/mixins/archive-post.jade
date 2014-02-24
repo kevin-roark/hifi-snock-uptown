@@ -1,0 +1,46 @@
+mixin archive-post(archive)
+    .archive-post
+        .archive-header
+            .pure-u-1-2.archive-section-padder
+                span(class="iconic paperclip archive-section-icon")
+                .archive-post-title
+                    =archive.title
+                .archive-date
+                    =archive._.createdAt.format('hh:mm A Do MMMM YYYY')
+                .archive-post-description
+                    !=archive.description
+        if archive.images.length
+            .archive-images
+                .archive-section-padder
+                    span(class="iconic aperture archive-section-icon")
+                    - for (var i=0; i<archive.images.length; i++) {
+                        .pure-u-1-3
+                            .archive-image-container
+                                img(src="" + archive.images[i].url, class="archive-image", id="archive-image-" + i)
+                    - }
+        if audios.length
+            .archive-audio
+                .archive-section-padder
+                    span(class="iconic bars_alt archive-section-icon")
+                    - for (var i=0; i<audios.length; i++) {
+                        .pure-u-1-24
+                        .pure-u-10-24
+                            .archive-audio-container
+                                !=audios[i].embedly.html
+                                if audios[i].caption.length
+                                    .archive-audio-caption
+                                        =audios[i].caption
+                        .pure-u-1-24
+                    - }
+        if videos.length
+            .archive-video
+                .archive-section-padder
+                    span(class="iconic movie archive-section-icon")
+                    - for (var i=0; i<videos.length; i++) {
+                        .pure-u-1
+                            .archive-video-container
+                                !=videos[i].embedly.html
+                                if videos[i].caption.length
+                                    .archive-video-caption
+                                        =videos[i].caption
+                    - }

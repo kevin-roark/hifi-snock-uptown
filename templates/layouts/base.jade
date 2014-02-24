@@ -1,0 +1,53 @@
+include ../mixins/flash-messages
+ 
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+        
+        title= title || 'Hi Fi Snock Uptown: Columbia University DIY'
+        link(rel="shortcut icon", href="/favicon.ico?v=1.0", type="image/x-icon")
+        link(href="/styles/pure.min.css", rel="stylesheet")
+        link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet')
+        link(href="/styles/site.min.css", rel="stylesheet")
+        
+        block css
+        block head
+
+    body
+        block navbar
+            div(class="navbar")
+                div(class="logo-zone")
+                    img(class="logo" src="/images/logo.png" alt="Hi Fi Snock Logo")
+                div(class="extra-logo-stuff")
+                    block extra-logo-stuff
+                div(class="pure-menu pure-menu-open pure-menu-horizontal", id="menu-bar")
+                    ul(id="menu-list")
+                        li(class="pure-menu-selected", id="home-nav")
+                            a(href="/") Home
+                        li(id="event-nav")
+                            a(href="/events") Events
+                        li(id="blog-nav")
+                            a(href="/blog") Blog
+                        li(id="archive-nav")
+                            a(href="/archives") Archives
+                        li(id="recipe-nav")
+                            a(href="/recipes") Recipes
+                        li(id="about-nav")
+                            a(href="/about") About
+
+        +flash-messages(messages)
+        
+        .pure-g#body
+            
+            block intro
+            
+            block content
+
+            .pure-u-1#footer
+                |Hi Fi Snock Uptown -- 2014, Columbia, DIY, etc.
+            
+    script(src='/js/lib/jquery.min.js')
+
+    block js

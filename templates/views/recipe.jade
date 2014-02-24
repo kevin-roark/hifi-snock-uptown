@@ -1,0 +1,35 @@
+extends ../layouts/base
+
+block content
+    .pure-u-4-24
+    .pure-u-12-24
+        .recipe-post
+            .recipe-name
+                =recipe.name
+            .recipe-details
+                .recipe-author
+                    =recipe.author.name.first + ' ' + recipe.author.name.last
+                .recipe-date
+                    =recipe._.createdAt.format('hh:mm A on MMMM Do, YYYY')
+            if recipe.headerImage
+                .recipe-header-image-holder
+                    img(src="" + recipe.headerImage.url, class="recipe-header-image")
+            .recipe-ingredients-header MIX 'EMS:
+            .recipe-ingredients
+                !=recipe.ingredients
+            .recipe-instructions-header FIX 'EMS:
+            .recipe-instructions
+                !=recipe.instructions
+    .pure-u-8-24
+        if recipe.otherImages.length
+            .recipe-other-images
+                .recipe-other-images-header What 'U' Get:
+                - for (var i=0; i < recipe.otherImages.length; i++) {
+                    .recipe-other-image-holder
+                        img(src="" + recipe.otherImages[i].url, class="recipe-other-image")
+                - }
+
+block js
+    script.
+        $('#menu-list').children().removeClass('pure-menu-selected');
+        $('#recipe-nav').addClass('pure-menu-selected');

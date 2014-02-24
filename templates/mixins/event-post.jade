@@ -1,0 +1,27 @@
+mixin event-post(event)
+    .event-post
+        .event-header
+            .event-name
+                =event.name
+            .event-date
+                =event._.startTime.format('MMM Do YYYY')
+            .event-time
+                span(class="event-start")
+                    =event._.startTime.format('h:MM A ')
+                if event.endTime
+                    | - 
+                    span(class="event-end")
+                        =event._.endTime.format('h:MM A')
+
+        if event.image.url
+            .event-image-container
+                a(class="event-image-link", href="" + event.image.url, target="_blank")
+                    img(src=event.image.url, class="event-image")
+
+        .event-content
+            .event-description
+                !=event.description
+
+mixin event-link(event)
+    a(href="/events/" + event.slug)
+        =event.name + ' - ' + event._.startTime.format('h:MM A MMM Do')

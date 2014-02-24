@@ -1,0 +1,54 @@
+extends ../layouts/base
+
+include ../mixins/event-post
+
+block content
+    .pure-u-1-4
+        #event-left-bar
+            #events-writeup
+                |So u wanna know what the events are like huh?!
+                |<br>
+                |Fun, cool, smart, and more - like friends (friends can also be cool and fun).
+                |<br>
+                |So come on down and dance a jig with us! We're throwing them often!!!
+                |<br>
+                |xx Hi Fi Snock 4ever xx
+    .pure-u-1-2
+        if events.length
+            +event-post(events[0])
+
+    .pure-u-1-4
+        #other-events
+            #other-events-header Other events:
+            if (events.length > 1)
+                ul(id="other-events-list")
+                - for (var i=1; i<events.length; i++) {
+                    li
+                        +event-link(events[i])
+                - }
+            else
+                div WE ONLY GOT 1 EVENT SO FAR.
+
+block js
+    script(src="/js/lib/rainbow.js")
+    script.
+        $(function() {
+            $('#menu-list').children().removeClass('pure-menu-selected');
+            $('#event-nav').addClass('pure-menu-selected');
+
+            var rainbowColors = [
+                '#FF0000',
+                '#f26522',
+                '#00a651',
+                '#28abe2',
+                '#2e3192',
+                '#6868ff'
+            ];
+            $('.event-name').rainbow({
+                colors: rainbowColors,
+                animate: true,
+                animateInterval: 100,
+                pad: false,
+                pauseLength: 100
+            });
+        });

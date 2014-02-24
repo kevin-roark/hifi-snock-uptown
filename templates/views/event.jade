@@ -1,0 +1,33 @@
+extends ../layouts/base
+
+include ../mixins/event-post
+
+block content
+    .pure-u-1-4
+
+    .pure-u-1-2
+        +event-post(event)
+
+block js
+    script(src="/js/lib/rainbow.js")
+    script.
+        $(function() {
+            $('#menu-list').children().removeClass('pure-menu-selected');
+            $('#event-nav').addClass('pure-menu-selected');
+
+            var rainbowColors = [
+                '#FF0000',
+                '#f26522',
+                '#00a651',
+                '#28abe2',
+                '#2e3192',
+                '#6868ff'
+            ];
+            $('.event-name').rainbow({
+                colors: rainbowColors,
+                animate: true,
+                animateInterval: 100,
+                pad: false,
+                pauseLength: 100
+            });
+        });

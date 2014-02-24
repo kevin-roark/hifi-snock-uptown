@@ -1,0 +1,18 @@
+mixin song-player(song)
+    .song-player
+        audio(id="song-player-audio" src="" + song.file.url, preload="auto")
+        .song-details
+            .song-title
+                =song.name
+            div
+                span
+                    |By 
+                span(class="song-artist")
+                    =song.artist
+                span(class="float-right")
+                    |From 
+                    span(class="song-album")
+                        =song.album
+        .song-controls
+            button(class="pure-button song-player-play-button")
+                |Pause the song!!

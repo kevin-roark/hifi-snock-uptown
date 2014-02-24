@@ -1,0 +1,101 @@
+extends ../layouts/base
+
+include ../mixins/song-player
+
+block css
+    link(rel="stylesheet", href="/styles/lib/spectrum.css")
+    link(rel='stylesheet', href='/styles/lib/iconic_fill/iconic_fill.css', type='text/css' media='screen')
+
+block extra-logo-stuff
+    +song-player(song)
+
+block content
+    .pure-u-8-24
+        #chatting
+            #chat-header
+                |Hi Fi Snock Chat 
+                div(id="chat-settings", class="pure-form")
+                    #ppl-chattin people chattin right now: 
+                        span(id="chatter-count")
+                    input.text(id="name-input", placeholder="ur nickname", required)
+                    input.text(id="name-color")
+            #chat-box
+            #chat-controls(class="pure-form")
+                input.field(id="chat-input")
+                input.send(type='button', class="pure-button pure-button-primary", id="chat-send" value="send")
+
+    .pure-u-12-24
+        #front-page-event
+            #front-page-event-title
+                a(href="/events/" + event.slug, id="front-page-event-title-name")=event.name
+            a(href="/events/" + event.slug, id="front-page-event-date")=event._.startTime.format('h:mm A MM/DD')
+            #front-page-event-flyer-container
+                a(href="/events/" + event.slug)
+                    img(src="" + event.image.url, id="front-page-event-flyer")
+
+    .pure-u-4-24
+        .snock-sidebar-section#snock-one-hot-post
+            .snock-sidebar-header#snock-one-hot-post-header
+                |!! Look @ 1 Hot Post !!
+            div
+                a(href="/blog/" + hot_post.slug, id="hot-post-link")=hot_post.title
+            span(class="iconic bolt snock-hot-post-icon", id="snock-hot-post-bolt")
+            span(class="iconic bolt snock-hot-post-icon", id="snock-hot-post-bolt")
+        .snock-sidebar-section#snock-friends
+            .snock-sidebar-header#snock-friends-header Snock Friends
+            ul(class="snock-sidebar-list", id="snock-friends-list")
+                li(class="snock-friend")
+                    a(href="//wbar.org", target="_blank") WBAR
+                li(class="snock-friend")
+                    a(href="//porkf.at", target="_blank") porkfat
+                li(class="snock-friend")
+                    a(href="//www.studentaffairs.columbia.edu/wkcr/", target="_blank") WKCR
+        .snock-sidebar-section#snock-chives
+            .snock-sidebar-header#snock-chives-header Snock Chives
+            ul(class="snock-sidebar-list", id="snock-chives-list")
+                - for (var i=0; i < snock_chives.length; i++) {
+                    li(class="snock-chive")
+                        a(href="/archives/" + snock_chives[i].slug)
+                            =snock_chives[i].title + snock_chives[i]._.createdAt.format(' - MM/DD/YY')
+                - }
+        .snock-sidebar-section#snock-enemies
+            .snock-sidebar-header#snock-enemies-header Snock Enemies
+            ul(class="snock-sidebar-list", id="snock-enemies-list")
+                li(class="snock-enemy")
+                    a(href="//mcdonalds.com", target="_blank") McDonald's
+                li(class="snock-enemy")
+                    a(href="//linkedin.com", target="_blank") LinkedIn
+        .snock-sidebar-section#snock-recipes
+            .snock-sidebar-header#snock-recipes-header
+                |Be sure to check out our tasty super 'n' fun
+                div
+                    a(href="/recipes") SNOCKIPIES !!!!
+
+block js
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/lib/rainbow.js')
+    script(src='/js/lib/spectrum.js')
+
+    script(src='/js/chat.js')
+    script.
+        var eventHeight = $('#front-page-event').height();
+        var chatHeight = Math.min($(window).height() - 240, eventHeight - 200);
+        $('#chat-box').css('height', chatHeight + 'px');
+        $('#chat-box').hide().fadeIn(1000);
+
+        var audioPlayer = document.getElementById('song-player-audio');
+
+        setTimeout(function() {
+          audioPlayer.play();
+        }, 2000);
+
+        $('.song-player-play-button').click(function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                $('.song-player-play-button').html('Pause the song!!');
+            }
+            else {
+                audioPlayer.pause();
+                $('.song-player-play-button').html('Play the song!!');
+            }
+        });

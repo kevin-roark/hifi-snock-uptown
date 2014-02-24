@@ -1,0 +1,98 @@
+extends ../layouts/base
+
+include ../mixins/archive-post
+
+block css
+    link(rel='stylesheet', href='/styles/lib/iconic_fill/iconic_fill.css', type='text/css' media='screen')
+
+block content
+    +archive-post(archive)
+
+    .body-hider
+    .pure-u
+        .archive-image-overlay-wrapper
+            
+
+block js
+    script var highestImgIndex=
+        = archive.images.length - 1
+    script.
+        $('#menu-list').children().removeClass('pure-menu-selected');
+        $('#archive-nav').addClass('pure-menu-selected');
+        $('body').css('background-color', '#fefefe');
+
+        var overlay = $('.archive-image-overlay-wrapper');
+        var bodyHider = $('.body-hider');
+        var img;
+        var clickedImg;
+
+        bodyHider.css('width', $(document).width() + 'px');
+        bodyHider.css('height', $(document).height() + 'px');
+
+        function showTheater(target) {
+            var src = target.attr('src');
+            clickedImg = target;
+
+            img = $('<img>');
+            img.addClass('.archive-image-overlay');
+            img.attr('src', src);
+            overlay.append(img);
+
+            overlay.show();
+            bodyHider.show();
+        }
+
+        $('.archive-image').click(function(ev) {
+            showTheater($(ev.target));
+            console.log(ev);
+        });
+
+        function hideTheater() {
+            overlay.html('');
+            overlay.hide();
+            bodyHider.hide();
+            clickedImg = null;
+        }
+
+        $('body').mouseup(function(e) {
+            if (e.target != overlay.get(0) && img &&e.target != img.get(0)) {
+                hideTheater();
+            }
+        });
+
+        function changeTheater(isLeft) {
+            if (clickedImg) {
+                var id = clickedImg.attr('id');
+                var imgSections = id.split('-');
+                var imgNum = parseInt(imgSections[imgSections.length - 1]);
+
+                var nextImg;
+                if (isLeft) {
+                    nextImg = $('#archive-image-' + (imgNum-1));
+                    if (!nextImg.length) {
+                        nextImg = $('#archive-image-' + highestImgIndex);
+                    }
+                }
+                else {
+                    nextImg = $('#archive-image-' + (imgNum+1));
+                    if (!nextImg.length) {
+                        nextImg = $('#archive-image-0');
+                    }
+                }
+
+                hideTheater();
+                showTheater(nextImg);
+            }
+        }
+
+        $('body').keyup(function(e) {
+            if (e.keyCode == 27) { // esc
+                hideTheater();
+            }
+            else if (e.keyCode == 39) { //right
+                changeTheater(false);
+            }
+            else if (e.keyCode == 37) { // left
+                changeTheater(true);
+            }
+        });

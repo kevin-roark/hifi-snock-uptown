@@ -1,0 +1,40 @@
+extends ../layouts/base
+
+block content
+    .about-content-wrapper
+        .pure-u-1-4
+        .pure-u-1-2
+            .about-email.about-section
+                |Hit the message-zone @ hifisnockuptown[at]gmail.com
+            .about-phone.about-section
+                |Call slippery Mike @ 314-583-6953
+            .about-chat.about-section
+                |Talk to us (and them) via the home page 
+                span(id="about-chat") chat room!!!
+            .about-paragraph.about-section.
+                HiFi Snock Uptown is a cool place to listen to fun DIY music for free
+                at Columbia University. Currently, we throw shows in 501 Dodge. We try
+                to have them at least once a month. Be on the lookout.
+
+block js
+    script(src='/js/lib/rainbow.js')
+    script.
+        $('#menu-list').children().removeClass('pure-menu-selected');
+        $('#about-nav').addClass('pure-menu-selected');
+
+        var rainbowColors = [
+                '#FF0000',
+                '#f26522',
+                '#fff200',
+                '#00a651',
+                '#28abe2',
+                '#2e3192',
+                '#6868ff'
+            ];
+        $('#about-chat').rainbow({
+            colors: rainbowColors,
+            animate: true,
+            animateInterval: 100,
+            pad: false,
+            pauseLength: 100
+        });
