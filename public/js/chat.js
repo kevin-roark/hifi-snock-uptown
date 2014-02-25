@@ -66,6 +66,7 @@ $(function() {
         var msgEl = getMsgEl(msg, true);
         recentMsg = msg;
         chatBox.append(msgEl);
+        chatBox.scrollTop(chatBox[0].scrollHeight);
     }
 
     function getMsgEl(msg, rainbow) {
@@ -126,7 +127,6 @@ $(function() {
         socket.emit('message', msg);
 
         chatInput.val('');
-        chatBox.scrollTop(chatBox[0].scrollHeight);
     }
     $('#chat-send').click(function() {
         sendChat();
