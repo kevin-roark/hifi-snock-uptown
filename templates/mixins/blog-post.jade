@@ -6,13 +6,13 @@ mixin blog-post(post)
             .post-details
                 span(class="post-author")
                     =post.author.name.first + ' ' + post.author.name.last + ' '
-                | - 
+                | -
                 span(class="post-time")
                     =post._.createdAt.format('hh:mm A. MMM Do, YYYY')
         if post.image.url
                 .post-image-container
-                    a(class="post-image-link", href="" + post.image.url, target="_blank")
-                        img(class="post-image", src="" + post.image.url)
+                    a(class="post-image-link", href="" + post._.image.limit(700, 700), target="_blank")
+                        img(class="post-image", src="" + post._.image.limit(700, 700))
         .post-body
             .post-body-holder
                 span(class="post-body-icon-holder")

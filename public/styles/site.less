@@ -214,7 +214,7 @@ html, button, input, select, textarea,
 }
 
 
-/** 
+/**
  * BLOG STYLES
  */
 
@@ -547,6 +547,15 @@ html, button, input, select, textarea,
                 };
             }
 
+        .event-link {
+            color: @otherEventsColor;
+            text-decoration: none;
+
+            &:hover, &:focus {
+                color: darken(@otherEventsColor, 20%);
+            };
+        }
+
 /**
  * MUSIC STYLES
  */
@@ -687,7 +696,7 @@ html, button, input, select, textarea,
     }
 
 #snock-friends {
-    
+
 }
 
     #snock-friends-header {
@@ -695,7 +704,7 @@ html, button, input, select, textarea,
     }
 
     #snock-friends-list {
-        
+
     }
 
         .snock-friend {
@@ -709,7 +718,7 @@ html, button, input, select, textarea,
         }
 
 #snock-enemies {
-    
+
 }
 
     #snock-enemies-header {
@@ -717,7 +726,7 @@ html, button, input, select, textarea,
     }
 
     #snock-enemies-list {
-        
+
     }
 
         .snock-enemy {
@@ -731,7 +740,7 @@ html, button, input, select, textarea,
         }
 
 #snock-chives {
-    
+
 }
 
     #snock-chives-header {
@@ -1109,13 +1118,13 @@ html, button, input, select, textarea,
 }
 
     .archive-image-overlay {
-        
+
     }
 
 .archive-post {
     width: 100%;
 }
-    
+
     .archive-section-icon {
         font-size: 172px;
         position: absolute;
@@ -1127,7 +1136,7 @@ html, button, input, select, textarea,
         margin-left: @archiveContentOffset;
         margin-right: @archiveContentFromRight;
     }
-    
+
     .archive-header {
         position: relative;
         background-color: @archiveHeaderBgColor;

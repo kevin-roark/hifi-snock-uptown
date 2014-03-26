@@ -12,7 +12,7 @@ block content
                             =recipes[i].name
                         if recipes[i].headerImage
                             .recipe-box-image-holder
-                                img(class="recipe-box-image", src=recipes[i].headerImage.url)
+                                img(class="recipe-box-image", src=recipes[i]._.headerImage.limit(700, 700))
         - }
 
 block js

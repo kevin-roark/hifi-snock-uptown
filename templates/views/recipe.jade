@@ -13,7 +13,7 @@ block content
                     =recipe._.createdAt.format('hh:mm A on MMMM Do, YYYY')
             if recipe.headerImage
                 .recipe-header-image-holder
-                    img(src="" + recipe.headerImage.url, class="recipe-header-image")
+                    img(src="" + recipe._.headerImage.limit(700, 700), class="recipe-header-image")
             .recipe-ingredients-header MIX 'EMS:
             .recipe-ingredients
                 !=recipe.ingredients
@@ -26,7 +26,7 @@ block content
                 .recipe-other-images-header What 'U' Get:
                 - for (var i=0; i < recipe.otherImages.length; i++) {
                     .recipe-other-image-holder
-                        img(src="" + recipe.otherImages[i].url, class="recipe-other-image")
+                        img(src="" + recipe.otherImages[i].limit(700, 700), class="recipe-other-image")
                 - }
 
 block js

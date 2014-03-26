@@ -9,19 +9,19 @@ mixin event-post(event)
                 span(class="event-start")
                     =event._.startTime.format('h:MM A ')
                 if event.endTime
-                    | - 
+                    | -
                     span(class="event-end")
                         =event._.endTime.format('h:MM A')
 
         if event.image.url
             .event-image-container
-                a(class="event-image-link", href="" + event.image.url, target="_blank")
-                    img(src=event.image.url, class="event-image")
+                a(class="event-image-link", href="" + event._.image.limit(700, 700), target="_blank")
+                    img(src=event._.image.limit(700, 700), class="event-image")
 
         .event-content
             .event-description
                 !=event.description
 
 mixin event-link(event)
-    a(href="/events/" + event.slug)
+    a(class="event-link", href="/events/" + event.slug)
         =event.name + ' - ' + event._.startTime.format('h:MM A MMM Do')
